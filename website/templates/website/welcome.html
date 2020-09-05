@@ -1,15 +1,18 @@
 {% extends "layouts/base.html" %}
 
 {% block content %}
-        <h1>{{ message }}</h1>
-        <h3>{{total_meetings}} Meetings Available</h3>
-        <ul class="list-group">
-                  {% for meeting in meetings %}
-                <li class="list-group-item">
-                        <a href="{% url 'meeting' meeting.id %}">
-                                {{meeting.title}}
-                        </a>
-                </li>
-                {% endfor %}
-        </ul>
+<h1>{{ message }}</h1>
+<a href="{% url 'rooms' %}">
+    Room List
+</a>
+<h3>{{total_meetings}} Meetings Available</h3>
+<ul class="list-group">
+    {% for meeting in meetings %}
+    <li class="list-group-item">
+        <a href="{% url 'meeting' meeting.id %}">
+            {{meeting.title}}
+        </a>
+    </li>
+    {% endfor %}
+</ul>
 {% endblock %}

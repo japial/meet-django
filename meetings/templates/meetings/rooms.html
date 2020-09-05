@@ -1,0 +1,15 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+<a href="{% url 'welcome' %}">
+    Welcome Page
+</a>
+<h3>Rooms</h3>
+<ul class="list-group">
+    {% for room in rooms %}
+    <li class="list-group-item">
+        {{room.floor}} Floor | Room : {{room.name}}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
