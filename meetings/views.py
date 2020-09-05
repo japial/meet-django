@@ -1,7 +1,17 @@
-from django.shortcuts import render, get_object_or_404
-
-# Create your views here.
+from django.shortcuts import render, get_object_or_404, redirect
 from meetings.models import Meeting, Room
+from .forms import MeetingForm
+
+
+def create(request):
+    if request.method == "POST":
+        form = MeetingForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('welcome')
+    else:
+        form = MeetingForm
+    return render(request, 'meetings/create.html', {'form': form})
 
 
 def details(request, id):

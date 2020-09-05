@@ -5,6 +5,10 @@
 <a href="{% url 'rooms' %}">
     Room List
 </a>
+<a class="btn btn-primary float-right" href="{% url 'create' %}">
+    Create Meeting
+</a>
+<hr>
 <h3>{{total_meetings}} Meetings Available</h3>
 <ul class="list-group">
     {% for meeting in meetings %}
