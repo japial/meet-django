@@ -1,7 +1,8 @@
 {% extends "layouts/base.html" %}
 
 {% block content %}
+        <a href="{% url 'welcome' %}">Welcome Page</a>
         <h1>{{ meeting.title }}</h1>
         <h3>Date: {{meeting.date}} | Start At: {{meeting.start_time}} | Duration: {{meeting.duration}}</h3>
-        <h5>Room: {{meeting.room.floor}}th Floor</h5>
+        <h5>Room: {{meeting.room.room_number}} at {{meeting.room.floor}}th Floor</h5>
 {% endblock %}

@@ -20,7 +20,7 @@ from meetings.views import details
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', welcome),
+    path('', welcome, name="welcome"),
     path('about', about),
-    path('meetings/details/<int:id>', details),
+    path('meetings/<int:id>', details, name="meeting"),
 ]
