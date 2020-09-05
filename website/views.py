@@ -5,8 +5,16 @@ from django.shortcuts import render
 
 
 # Create your views here.
+from meetings.models import Meeting
+
+
 def welcome(request):
-    return HttpResponse('Welcome to meeting Planner')
+    contexts = {
+        'message': 'Your Another Meeting Platform!',
+        'total_meetings': Meeting.objects.count(),
+        'meetings': Meeting.objects.all(),
+    }
+    return render(request, 'website/welcome.html', contexts)
 
 
 def about(request):

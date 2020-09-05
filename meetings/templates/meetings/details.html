@@ -1,0 +1,7 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+        <h1>{{ meeting.title }}</h1>
+        <h3>Date: {{meeting.date}} | Start At: {{meeting.start_time}} | Duration: {{meeting.duration}}</h3>
+        <h5>Room: {{meeting.room.floor}}th Floor</h5>
+{% endblock %}
